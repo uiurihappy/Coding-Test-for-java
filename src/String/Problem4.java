@@ -7,7 +7,7 @@ class Problem4 {
 	public ArrayList<String> solution (int n, String[] str){
 		ArrayList<String> answer = new ArrayList<>();
 		for (String x : str) {
-			StringBuffer sb = new StringBuffer(x);
+			StringBuilder sb = new StringBuilder(x);
 			answer.add(sb.reverse().toString());
 		}
 		return answer;
