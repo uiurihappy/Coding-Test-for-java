@@ -44,7 +44,10 @@ class Problem3 {
 				m = len;
 				answer = temp;
 			}
+			str = str.substring(pos + 1); // it 부터 앞 단어들은 삭제
 		}
+		// 마지막 단어의 길이가 m보다 크면 answer에 저장
+		if(str.length() > m) answer = str;
 
 		return answer;
 	}
