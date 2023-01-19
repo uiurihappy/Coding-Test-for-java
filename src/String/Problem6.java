@@ -6,18 +6,10 @@ class Problem6 {
 
 	public String solution(String str){
 		String answer = "";
-		for(int i = 0; i < str.length(); i++) {
-			char t = str.charAt(i);
-			for (int j = i; j <= str.length(); j++) {
-				if(t != str.charAt(j)) {
-					answer += t;
-					break;
-				}else{
-					break;
-				}
-			}
+		for (int i = 0; i < str.length(); i++) {
+			if (str.indexOf(str.charAt(i)) == i)
+				answer += str.charAt(i);
 		}
-
 		return answer;
 	}
 
