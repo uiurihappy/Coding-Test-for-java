@@ -6,6 +6,29 @@ class Problem8 {
 
 	public String solution(String str){
 		String answer = "";
+		StringBuilder temp = new StringBuilder();
+		char[] s = str.toCharArray();
+
+		for (char x : s){
+			if (Character.isAlphabetic(x)) {
+				temp.append(x);
+			}
+		}
+		str = String.valueOf(temp);
+
+		str = str.toLowerCase();
+		int lt = 0, rt = str.length() - 1;
+		char[] t = str.toCharArray();
+
+		while (lt < rt) {
+			if(t[lt] != t[rt]){
+				answer = "NO";
+				break;
+			}
+			lt++;
+			rt--;
+			answer = "YES";
+		}
 
 		return answer;
 	}
