@@ -1,7 +1,10 @@
 package String;
 
 import java.util.Scanner;
-
+/*
+	input:  ksekkset
+	output: kset
+ */
 class Problem6 {
 
 	public String solution(String str){
