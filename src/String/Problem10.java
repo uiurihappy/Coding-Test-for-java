@@ -16,11 +16,10 @@ class Problem10 {
 		for (int i =0; i < str.length(); i++){
 			if (str.charAt(i) == t) {
 				p = 0;
-				answer[i] = p;
 			} else {
 				p++;
-				answer[i] = p;
 			}
+			answer[i] = p;
 		}
 		// init p
 		p = 1000;
@@ -28,9 +27,9 @@ class Problem10 {
 		for (int i = str.length() - 1; i >= 0; i--){
 			if (str.charAt(i) == t) {
 				p = 0;
+				// p값을 넣으면 안된다. 그러면 역순으로 수가 계속 증가함
 			} else {
 				p++;
-
 				// 둘 중 작은 값으로 대입
 				answer[i] = Math.min(answer[i], p);
 			}
