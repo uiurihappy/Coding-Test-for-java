@@ -2,20 +2,23 @@ package ArrayProblem;
 
 import java.util.Scanner;
 
+/*
+	점수 계산
+	input: 10
+	1 0 1 1 1 0 0 1 1 0
+	output: 10
+ */
 class Problem7 {
 
 	public int solution (int[] arr) {
 		int answer = 0;
-		int temp = 0;
+		int cnt = 0;
 		for (int j : arr) {
 			if (j == 1) {
-				temp++;
-				answer += temp;
-			} else {
-				temp = 0;
-			}
+				cnt++;
+				answer += cnt;
+			} else cnt = 0;
 		}
-
 
 		return answer;
 	}
