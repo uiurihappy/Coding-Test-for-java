@@ -14,16 +14,15 @@ class Problem8 {
 
 	public ArrayList<Integer> solution (int[] arr) {
 		ArrayList<Integer> answer = new ArrayList<>();
-		int ranking = 1;
 		for (int i = 0; i < arr.length; i++) {
-			int temp = arr[i];
+			int ranking = 1;
+
 			for (int j = 0; j < arr.length; j++) {
-				if (arr[j] > temp) {
+				if (arr[j] > arr[i]) {
 					ranking++;
 				}
 			}
 			answer.add(ranking);
-			ranking = 1;
 		}
 		return answer;
 	}
