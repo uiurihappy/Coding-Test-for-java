@@ -1,4 +1,4 @@
-package ArrayProblem;
+package Chapter2;
 
 /*
 	등수 구하기

@@ -1,4 +1,4 @@
-package ArrayProblem;
+package Chapter2;
 
 /*
 	격자판 최대합
