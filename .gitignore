@@ -1,3 +1,4 @@
 !/out/production/*
 .idea/misc.xml
 #.idea/*.xml
+.idea/aws.xml
