@@ -1,2 +1,3 @@
 !/out/production/*
-.idea/*.xml
+.idea/misc.xml
+#.idea/*.xml
