@@ -5,25 +5,26 @@ import java.util.*;
 class Problem2 {
 	public ArrayList<Integer> solution(int n, int m, int[] arr1, int[] arr2) {
 		ArrayList<Integer> answer = new ArrayList<>();
+
 		// 정렬부터
 		Arrays.sort(arr1);
 		Arrays.sort(arr2);
 
 		// n = 5, m = 4라 가정
-		int p1 = 0, p2 = 0;
-
+		int i = 0, j = 0;
 		// 시간 복잡도는 O(n) 일듯..?
 		// 원래 사용하려 했던 이중 for문은 데이터 양이 적으면 터지지 않겠지만
 		// 20000, 30000개씩 들어오면 O(n^2)이라 터짐
-		while (p1 < n && p2 < m) {
-			if (arr1[p1] == arr2[p2]) {
-				// 같은 경우 삽입
-				answer.add(arr1[p1++]);
-				p2++;
+		while(i < arr1.length && j < arr2.length) {
+			if (arr1[i] > arr2[j]){
+				j++;
+			} else if (arr1[i] < arr2[j]) {
+				i++;
+			} else {
+				answer.add(arr1[i]);
+				i++;
+				j++;
 			}
-			// 정렬 되어서 낮은 값이 있으면 index 를 올린다.
-			else if (arr1[p1] < arr2[p2]) p1++;
-			else p2++;
 		}
 
 		return answer;
