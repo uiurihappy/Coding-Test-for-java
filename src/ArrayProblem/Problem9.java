@@ -33,6 +33,7 @@ class Problem9 {
 		}
 		sum1 = sum2 = 0;
 
+		// 대각선 합
 		for (int i = 0; i < n; i++) {
 			sum1 += arr[i][i];
 			sum2 += arr[i][n - i - 1];
