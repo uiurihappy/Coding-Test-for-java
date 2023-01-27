@@ -1,0 +1,56 @@
+package Chapter3;
+
+import java.util.Scanner;
+
+class Problem4 {
+
+	// 시간 초과
+//	public int solution (int n, int m, int[] arr) {
+//		int answer = 0;
+//      // O(n^2)
+//		for (int i = 0; i < n; i++) {
+//			int sum = 0;
+//			for (int j = i; j < n; j++) {
+//				sum += arr[j];
+//				if (m == sum) {
+//					answer++;
+//					break;
+//				}
+//			}
+//		}
+//
+//		return answer;
+//	}
+	// solution 2, Time: O(n)
+	public int solution (int n, int m, int[] arr) {
+		int answer = 0, sum = 0, lt = 0;
+
+		for (int rt = 0; rt < n; rt++) {
+			sum += arr[rt];
+			if(sum == m) answer++;
+
+			while (sum >= m) {
+				sum -= arr[lt++];
+				if (sum == m) answer++;
+			}
+		}
+
+		return answer;
+	}
+
+	public static void main(String[] args) {
+		Problem4 T = new Problem4();
+		Scanner kb = new Scanner(System.in);
+
+		int n = kb.nextInt();
+		int m = kb.nextInt();
+		int[] arr = new int[n];
+
+		for (int i = 0; i < n; i++) {
+			arr[i] = kb.nextInt();
+		}
+
+		System.out.println(T.solution(n, m, arr));
+
+	}
+}

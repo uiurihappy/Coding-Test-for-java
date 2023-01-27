@@ -5,20 +5,17 @@ import java.util.Scanner;
 class Problem3 {
 
 	public int solution (int n, int d, int[] arr) {
-		int answer = 0;
 		int sum = 0;
 
 		for (int i = 0; i < d; i++) {
 			// 첫 매출
 			sum += arr[i];
 		}
-		answer = sum;
+		int answer = sum;
 
 		for (int i = d; i < n; i++) {
-			sum = sum + arr[i] - arr[i - d];
-			if (sum > answer) {
-				answer = sum;
-			}
+			sum += (arr[i] - arr[i - d]);
+			answer = Math.max(answer, sum);
 		}
 
 		return answer;
