@@ -15,7 +15,7 @@ class Problem2 {
 		// 시간 복잡도는 O(n) 일듯..?
 		// 원래 사용하려 했던 이중 for문은 데이터 양이 적으면 터지지 않겠지만
 		// 20000, 30000개씩 들어오면 O(n^2)이라 터짐
-		while(i < arr1.length && j < arr2.length) {
+		while(i < n&& j < m) {
 			if (arr1[i] > arr2[j]){
 				j++;
 			} else if (arr1[i] < arr2[j]) {

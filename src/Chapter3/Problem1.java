@@ -25,7 +25,6 @@ class Problem1 {
 			else
 				answer.add(arr2[p2++]);
 		}
-
 		while (p1 < n) answer.add(arr1[p1++]);
 		while (p2 < m) answer.add(arr2[p2++]);
 
@@ -45,6 +44,8 @@ class Problem1 {
 		int m = kb.nextInt();
 		int[] arr2 = new int[m];
 
+		// 입력 자체가 오름차순이라 sort를 안해도 됨
+		// 아니면 마지막에 sort를 해도 무방
 		for (int i = 0; i < m; i++) {
 			arr2[i] = kb.nextInt();
 		}
