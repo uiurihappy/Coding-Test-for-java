@@ -25,6 +25,7 @@ class Problem1 {
 			else
 				answer.add(arr2[p2++]);
 		}
+
 		while (p1 < n) answer.add(arr1[p1++]);
 		while (p2 < m) answer.add(arr2[p2++]);
 
