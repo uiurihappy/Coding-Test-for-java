@@ -28,8 +28,9 @@ class Problem4 {
 		for (int rt = 0; rt < n; rt++) {
 			sum += arr[rt];
 			if(sum == m) answer++;
-
+			// lt를 빼고 lt를 증가시키면서 lt가 rt를 쫓아오도록
 			while (sum >= m) {
+				// 점점 lt를 이동시키면서 빼주고 m값에 맞춰준다.
 				sum -= arr[lt++];
 				if (sum == m) answer++;
 			}
