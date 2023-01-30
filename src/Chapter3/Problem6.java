@@ -9,11 +9,12 @@ class Problem6 {
 
         for (int rt = 0; rt < n; rt++) {
             if (arr[rt] == 0) cnt++;
-
+//            System.out.println(cnt);
             while (cnt > k) {
                 if (arr[lt] == 0) cnt--;
                 lt++;
             }
+//            System.out.println(arr[rt] + " " + (rt - lt + 1) + " " + cnt);
 
             answer = Math.max(answer, rt - lt + 1);
         }
