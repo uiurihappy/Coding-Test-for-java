@@ -22,6 +22,8 @@ class Problem1 {
         for (char x : str.toCharArray()) {
             map.put(x, map.getOrDefault(x, 0) + 1);
         }
+
+        // keySet: HashMap에 정의된 key type에 맞춰 추출
         for (char key : map.keySet()) {
             if (map.get(key) > max) {
                 max = map.get(key);
