@@ -1,7 +1,6 @@
 package Chapter4;
 
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 
 class Problem4 {
 

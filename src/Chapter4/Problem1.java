@@ -1,6 +1,8 @@
 package Chapter4;
 
 import java.util.*;
+import java.util.Map.Entry;
+
 
 /*
 ** 학급 회장(해쉬)
@@ -23,13 +25,22 @@ class Problem1 {
             map.put(x, map.getOrDefault(x, 0) + 1);
         }
 
-        // keySet: HashMap에 정의된 key type에 맞춰 추출
+        // keySet: HashMap에 정의된 key type에 맞춰 추출, 아래보다 이게 더 빠름
         for (char key : map.keySet()) {
             if (map.get(key) > max) {
                 max = map.get(key);
                 answer = key;
             }
         }
+
+//        int maxValueInMap=(Collections.max(map.values()));  // This will return max value in the Hashmap
+//
+//        for (Entry<Character, Integer> entry : map.entrySet()) {  // Itrate through hashmap
+//            if (entry.getValue() == maxValueInMap) {
+//               answer = entry.getKey();    // Print the key with max value
+//            }
+//        }
+
         return answer;
     }
 
