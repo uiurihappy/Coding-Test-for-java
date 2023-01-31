@@ -1,7 +1,14 @@
 package Chapter4;
 
 import java.util.*;
-
+/*
+** 아나그램
+* input
+7 4
+20 12 20 10 23 17 10
+* output
+3 4 4 3
+ */
 class Problem2 {
 
 	public String solution(String str1, String str2) {
