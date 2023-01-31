@@ -2,6 +2,16 @@ package Chapter3;
 
 import java.util.Scanner;
 
+/*
+** 최대 매출
+* input
+10 3
+12 15 11 20 25 10 20 19 13 15
+
+* output
+56
+
+ */
 class Problem3 {
 
 	public int solution (int n, int d, int[] arr) {

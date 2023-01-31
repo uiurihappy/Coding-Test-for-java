@@ -1,7 +1,13 @@
 package Chapter3;
 
 import java.util.Scanner;
-
+/*
+** 연속된 자연수의 합
+* input
+15
+* output
+3
+ */
 class Problem5 {
 
       // solution 1 (two pointers)

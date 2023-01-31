@@ -1,7 +1,16 @@
 package Chapter3;
 
 import java.util.Scanner;
+/*
+** 연속 부분수열
+* input
+8 6
+1 2 1 3 1 1 1 2
 
+* output
+3
+
+ */
 class Problem4 {
 
 	// 시간 초과

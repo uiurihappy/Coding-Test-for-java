@@ -1,12 +1,21 @@
 package Chapter4;
 
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
+
+/*
+** 학급 회장(해쉬)
+* input
+15
+BACBACCACCBDEDE
+
+* output
+C
+ */
 
 class Problem1 {
 
     public Character solution (int n, String str) {
-        Character answer = ' ';
+        char answer = ' ';
         int max = Integer.MIN_VALUE;
         HashMap<Character,Integer> map = new HashMap<>();
 

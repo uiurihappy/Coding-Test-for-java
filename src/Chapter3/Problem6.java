@@ -2,7 +2,19 @@ package Chapter3;
 
 import java.util.Scanner;
 
-// k만큼 0에서 1로 변경이 가능함
+// k만큼 0에서 1로 변경
+/*
+** 최대 길이 연속부분수열
+
+* input
+14 2
+1 1 0 0 1 1 0 1 1 0 1 1 0 1
+
+* output
+8
+
+ */
+
 class Problem6 {
     public int solution (int n, int k, int[] arr) {
         int answer = 0, cnt = 0, lt = 0;

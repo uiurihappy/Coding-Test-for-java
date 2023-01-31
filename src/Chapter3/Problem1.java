@@ -1,6 +1,19 @@
 package Chapter3;
 
 import java.util.*;
+/*
+** 두 배열 합치기
+input
+3
+1 3 5
+5
+2 3 6 7 9
+
+output
+1 2 3 3 5 6 7 9
+
+ */
+
 
 class Problem1 {
 
