@@ -3,11 +3,17 @@ package Chapter4;
 import java.util.*;
 /*
 ** 아나그램
-* input
-7 4
-20 12 20 10 23 17 10
-* output
-3 4 4 3
+* input 1
+AbaAeCe
+baeeACA
+* input 2
+abaCC
+Caaab
+
+* output 1
+YES
+* output 2
+NO
  */
 class Problem2 {
 

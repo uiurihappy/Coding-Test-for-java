@@ -19,9 +19,10 @@ class Problem1 {
     public Character solution (int n, String str) {
         char answer = ' ';
         int max = Integer.MIN_VALUE;
-        HashMap<Character,Integer> map = new HashMap<>();
+        HashMap<Character,Integer> map = new HashMap<>(n);
 
         for (char x : str.toCharArray()) {
+            // getOrDefault: x라는 키값이 없으면 0을 반환
             map.put(x, map.getOrDefault(x, 0) + 1);
         }
 

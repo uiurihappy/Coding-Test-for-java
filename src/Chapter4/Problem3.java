@@ -2,6 +2,15 @@ package Chapter4;
 
 import java.util.*;
 
+/*
+** 매출액
+* input
+7 4
+20 12 20 10 23 17 10
+* output
+3 4 4 3
+ */
+
 class Problem3 {
 
 	public ArrayList<Integer> solution (int n, int k, int[] arr) {
