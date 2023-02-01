@@ -2,6 +2,15 @@ package Chapter4;
 
 import java.util.*;
 
+/*
+** 모든 아나그램 찾기
+* input
+bacaAacba
+abc
+* output
+3
+ */
+
 class Problem4 {
 
 	public int solution(String s, String t) {
@@ -21,6 +30,7 @@ class Problem4 {
 		for (int rt = tlen; rt < slen; rt++) {
 			smap.put(s.charAt(rt), smap.getOrDefault(s.charAt(rt), 0) + 1);
 
+			// 아래 if 문을 제외하면 같은 문제다.
 			// key, value 다 같으면 true, 하나라도 아니면 false
 			if (smap.equals(tmap))
 				answer++;

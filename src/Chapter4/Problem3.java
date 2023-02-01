@@ -19,7 +19,7 @@ class Problem3 {
 
 		int lt = 0;
 
-		// k - 1 기준으로 쪼개서 탐색한다.
+		// k - 1 기준으로 쪼개서 탐색한다. 시간 복잡도: O(n)
 		for (int i = 0; i < k - 1; i++)
 			map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
 
@@ -27,8 +27,10 @@ class Problem3 {
 			map.put(arr[rt], map.getOrDefault(arr[rt], 0) + 1);
 			answer.add(map.size());
 //			System.out.println(map);
+			// 당연히 키가 있다는 전제하에
 			map.put(arr[lt], map.get(arr[lt]) - 1);
 //			System.out.println(map);
+			// 1 이상인 것만 size 체크를 위해 0인 것은 remove
 			if (map.get(arr[lt]) == 0)
 				map.remove(arr[lt]);
 			lt++;

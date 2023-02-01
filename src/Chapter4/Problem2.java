@@ -33,6 +33,21 @@ class Problem2 {
 
 		return answer;
 	}
+//	public String solution(String str1, String str2) {
+//		String answer = "YES";
+//
+//		HashMap<Character, Integer> map = new HashMap<>();
+//		for (char x : str1.toCharArray())
+//			map.put(x, map.getOrDefault(x, 0) + 1);
+//
+//		for (char x : str2.toCharArray()) {
+//			// 아나그램이 아니라는 뜻
+//			if (!map.containsKey(x) || map.get(x) == 0) return "NO";
+//			map.put(x, map.get(x) - 1);
+//		}
+//		return answer;
+//	}
+
 	public static void main(String[] args) {
 		Problem2 T = new Problem2();
 		Scanner kb = new Scanner(System.in);
