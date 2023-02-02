@@ -1,7 +1,19 @@
 package Chapter5;
 
 import java.util.*;
+/*
+** 올바른 괄호
 
+* input 1
+(()(()))(()
+* output 2
+NO
+* input 2
+(()(()))()
+* output 2
+YES
+
+ */
 class Problem1 {
 
 	public String solution(String str) {
