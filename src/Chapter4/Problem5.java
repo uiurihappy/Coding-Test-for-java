@@ -31,6 +31,13 @@ class Problem5 {
 
 		// TreeSet 구조는 중복 할당 x = 중복 제거, 순서 보장 x
 		// 이진탐색트리 구조라 정렬과 검색에 높은 성능을 보인다.
+		/*
+		TreeSet.remove(value) : 해당 value 삭제
+		TreeSet.size() : Set 의 size return
+		TreeSet.first() : 내림차순이면 최대값, 오름차순이면 최소값
+		TreeSet.last() : 내림차순이면 최소값, 오름차순이면 최대값
+		 */
+
 		for (int i = 0; i < n - 2; i++) {
 			for (int j = i + 1; j < n - 1; j++) {
 				for (int l = j + 1; l < n; l++) {
