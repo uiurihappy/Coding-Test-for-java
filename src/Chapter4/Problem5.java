@@ -1,11 +1,19 @@
 package Chapter4;
 
 import java.util.*;
-
+/*
+** K번째 큰 수
+* input
+10 3
+13 15 34 23 45 65 33 11 26 42
+* output
+143
+ */
 class Problem5 {
 
 	public int solution (int n, int k, int[] arr) {
 		int answer = 0;
+		// 기본 정렬은 오름차순
 		TreeSet<Integer> set = new TreeSet<>(Collections.reverseOrder());
 
 		if (n < k) answer = -1;
@@ -21,10 +29,10 @@ class Problem5 {
 //		}
 //		System.out.println(set);
 
-		// TreeSet 구조는 중복 할당 x, 순서 보장 x
+		// TreeSet 구조는 중복 할당 x = 중복 제거, 순서 보장 x
 		// 이진탐색트리 구조라 정렬과 검색에 높은 성능을 보인다.
-		for (int i = 0; i < n; i++) {
-			for (int j = i + 1; j < n; j++) {
+		for (int i = 0; i < n - 2; i++) {
+			for (int j = i + 1; j < n - 1; j++) {
 				for (int l = j + 1; l < n; l++) {
 					set.add(arr[i] + arr[j] + arr[l]);
 				}
@@ -35,7 +43,10 @@ class Problem5 {
 		// reverseOrder로 저장된 set에 cnt++를 하여 k 번째 element를 찾는다.
 		for (int x : set) {
 			cnt++;
-			if (cnt == k) return x;
+			if (cnt == k) {
+				answer = x;
+				break;
+			}
 		}
 		return answer;
 	}
