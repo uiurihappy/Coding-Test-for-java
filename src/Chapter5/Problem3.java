@@ -1,6 +1,7 @@
 package Chapter5;
 
 import java.util.Scanner;
+import java.util.Stack;
 
 /**
 ** 크레인 인형뽑기 (카카오)
@@ -20,7 +21,24 @@ class Problem3 {
 
 	public int solution (int n, int[][] board, int m, int[] moves) {
 		int answer = 0;
+		Stack<Integer> stack = new Stack<>();
 
+		for (int i = 0; i < m; i++) {
+
+			for (int j = 0; j < n; j++) {
+				System.out.print(board[j][moves[i] - 1] + " ");
+				if (board[j][moves[i] - 1] != 0) {
+					stack.push(board[j][moves[i] - 1]);
+					if (stack.contains(board[j][moves[i] - 1])) {
+					}
+					board[j][moves[i] - 1] = 0;
+					break;
+				}
+			}
+			System.out.println();
+
+		}
+		System.out.println(stack);
 		return answer;
 	}
 
