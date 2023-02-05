@@ -24,21 +24,20 @@ class Problem3 {
 		Stack<Integer> stack = new Stack<>();
 
 		for (int i = 0; i < m; i++) {
-
 			for (int j = 0; j < n; j++) {
-				System.out.print(board[j][moves[i] - 1] + " ");
 				if (board[j][moves[i] - 1] != 0) {
-					stack.push(board[j][moves[i] - 1]);
-					if (stack.contains(board[j][moves[i] - 1])) {
-					}
+					int temp = board[j][moves[i] - 1];
 					board[j][moves[i] - 1] = 0;
+//					System.out.println(stack);
+					if (!stack.isEmpty() && temp == stack.peek()) {
+						stack.pop();
+						answer += 2;
+					}
+					else stack.push(temp);
 					break;
 				}
 			}
-			System.out.println();
-
 		}
-		System.out.println(stack);
 		return answer;
 	}
 
@@ -58,7 +57,7 @@ class Problem3 {
 		int m = kb.nextInt();
 		int[] moves = new int[m];
 
-		for (int i = 0; i < n; i++) {
+		for (int i = 0; i < m; i++) {
 			moves[i] = kb.nextInt();
 		}
 
