@@ -13,10 +13,20 @@ class Problem4 {
             else {
                 int rt = stack.pop();
                 int lt = stack.pop();
-                if (x == '+') stack.push(lt + rt);
-                else if (x == '*') stack.push(lt * rt);
-                else if (x == '/') stack.push(lt / rt);
-                else if (x == '-') stack.push(lt - rt);
+//                if (x == '+') stack.push(lt + rt);
+//                else if (x == '*') stack.push(lt * rt);
+//                else if (x == '/') stack.push(lt / rt);
+//                else if (x == '-') stack.push(lt - rt);
+
+                switch (x) {
+                    case '+' -> stack.push(lt + rt);
+                    case '*' -> stack.push(lt * rt);
+                    case '/' -> stack.push(lt / rt);
+                    case '-' -> stack.push(lt - rt);
+                    default -> {
+                    }
+                }
+
             }
         }
         answer = stack.get(0);
