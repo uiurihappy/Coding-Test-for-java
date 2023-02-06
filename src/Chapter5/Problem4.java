@@ -1,7 +1,13 @@
 package Chapter5;
 
 import java.util.*;
-
+/*
+** 후위식 연산 (postfix)
+* input
+352+*9-
+* output
+12
+ */
 class Problem4 {
 
     public int solution (String str) {
