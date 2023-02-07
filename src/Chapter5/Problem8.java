@@ -54,11 +54,14 @@ class Problem8 {
 			Person temp = queue.poll();
 			for (Person x : queue) {
 //				System.out.println(temp.getPriority() + " " + x.getPriority());
+				// x는 리스트 elem, temp는 poll한 Person 객체
+//				System.out.print("[" + temp.getId() + ", " + temp.getPriority() + "]");
 				if (x.priority > temp.priority) {
 					queue.offer(temp);
 					temp = null;
 					break;
 				}
+//				System.out.println();
 			}
 			if (temp != null) {
 				answer++;
