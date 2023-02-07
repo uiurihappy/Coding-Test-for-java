@@ -21,9 +21,11 @@ class Problem6 {
 			// k번재 수가 아니면 다시 큐에 입력
 			for (int i = 1; i < k; i++) {
 //				System.out.print(queue.peek() + " ");
+				// poll로 뺀 값을 큐의 뒤로 add
 				queue.offer(queue.poll());
 			}
 //			System.out.println(queue);
+			// k - 1 번째까지 루프를 돌았으니 k번째는 poll
 			queue.poll();
 		}
 		answer = queue.poll();
