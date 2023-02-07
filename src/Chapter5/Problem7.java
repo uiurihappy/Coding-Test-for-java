@@ -1,7 +1,20 @@
 package Chapter5;
 
 import java.util.*;
+/*
+** 교육과정 설계
+ * input1
+CBA
+CBDAGE
+ * output1
+YES
 
+ * input2
+CBA
+CABBACE
+ * output2
+NO
+ */
 class Problem7 {
 
 	public String solution (String need, String plan) {
@@ -16,7 +29,6 @@ class Problem7 {
 //				return "YES";
 //			if (x == queue.peek())
 //				queue.poll();
-//
 //		}
 
 		// solution 2
