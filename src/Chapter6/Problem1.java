@@ -4,10 +4,18 @@ import java.util.*;
 
 class Problem1 {
 
-	public ArrayList<Integer> solution(int n, int[] arr) {
-		ArrayList<Integer> answer = new ArrayList<>();
+	public int[] solution(int n, int[] arr) {
 
-		return answer;
+		for (int i = 0; i < n; i++) {
+			for (int j = i + 1; j < n; j++) {
+				if (arr[i] > arr[j]) {
+					int temp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp;
+				}
+			}
+		}
+		return arr;
 	}
 
 	public static void main(String[] args) {
@@ -21,7 +29,7 @@ class Problem1 {
 		}
 
 		for (int x : T.solution(n, arr)) {
-			System.out.println(x + " ");
+			System.out.print(x + " ");
 		}
 
 	}
