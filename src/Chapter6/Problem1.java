@@ -2,19 +2,34 @@ package Chapter6;
 
 import java.util.*;
 
+/**
+ * 선택 정렬 (Selection sort)
+ * input
+ 6
+ 13 5 11 7 23 15
+
+ * output
+ 5 7 11 13 15 23
+
+ */
 class Problem1 {
 
 	public int[] solution(int n, int[] arr) {
 
-		for (int i = 0; i < n; i++) {
-			for (int j = i + 1; j < n; j++) {
-				if (arr[i] > arr[j]) {
-					int temp = arr[i];
-					arr[i] = arr[j];
-					arr[j] = temp;
+		// selection sort, 일종의 swap 함수
+		// 시간 복잡도는 O(n^2), 순서 보장이 안되어 불안정 정렬이다.
+		for (int i = 0; i < n - 1; i++) {
+			int min_index = i;
+			for(int j = i + 1; j < n; j ++) {
+				if(arr[min_index] > arr[j]) {
+					min_index = j;
 				}
 			}
+			int temp = arr[min_index];
+			arr[min_index] = arr[i];
+			arr[i] = temp;
 		}
+
 		return arr;
 	}
 
