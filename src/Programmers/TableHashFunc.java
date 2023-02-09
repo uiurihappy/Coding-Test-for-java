@@ -19,7 +19,12 @@ class TableHashFunc {
 		int answer = 0;
 		Arrays.sort(data, (o1, o2) -> {
 			// 내림차순 정렬
-			return (o1[col - 1] == o2[col-1] ? o2[0] - o1[0] : o1[col-1] - o2[col - 1]);
+//			return (o1[col - 1] == o2[col-1] ? o2[0] - o1[0] : o1[col-1] - o2[col - 1]);
+
+			if(o1[col-1] > o2[col-1]) return 1;
+				// 동일하면 첫 번째 컬럼 기준 내림차순 정렬
+			else if(o1[col-1] == o2[col-1]) return o2[0] - o1[0];
+			else return -1;
 		});
 
 		for(int i = row_begin - 1 ; i < row_end; i++){
