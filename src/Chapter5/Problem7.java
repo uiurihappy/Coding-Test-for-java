@@ -35,10 +35,12 @@ class Problem7 {
 		String answer = "YES";
 		for (char x : plan.toCharArray()) {
 			if (queue.contains(x)) {
+				// poll 한 값이 안맞아서 바로 NO를 return
 				if (x != queue.poll()) return "NO";
 			}
 		}
 
+		// 큐가 비어있지 않으면 아직 계획보다 필수과목이 더 남았기에 NO
 		if (!queue.isEmpty()) return "NO";
 		return answer;
 	}
