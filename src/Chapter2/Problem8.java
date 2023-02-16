@@ -7,8 +7,7 @@ package Chapter2;
 	output: 4 3 2 1 5
  */
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 class Problem8 {
 
