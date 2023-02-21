@@ -58,7 +58,7 @@ class Problem4 {
             arr[i] = kb.nextInt();
 
         for (int x : T.solution(s, n, arr))
-            System.out.println(x + " ");
+            System.out.print(x + " ");
 
     }
 }
