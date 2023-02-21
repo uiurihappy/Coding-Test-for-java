@@ -1,22 +1,48 @@
 package Chapter6;
 
-import java.util.Scanner;
+import java.util.*;
 
 class Problem5 {
 
-	public char solution (int n, int[] arr){
-		char answer = 'U';
+	public String solution (int n, int[] arr){
+		String answer = "U";
 
 		// first sol
-		for (int i = 0; i < arr.length; i++) {
-			int temp = arr[i];
-			for (int j = i + 1; j < arr.length; j++) {
-				if (arr[i] == arr[j]) return 'D';
-				else {
-					continue;
-				}
+//		for (int i = 0; i < arr.length; i++) {
+//			int temp = arr[i];
+//			for (int j = i + 1; j < arr.length; j++) {
+//				if (arr[i] == arr[j]) return 'D';
+//				else {
+//					continue;
+//				}
+//			}
+//		}
+
+		// stack sol
+//		Stack<Integer> stack = new Stack<>();
+//
+//		for (int x : arr) {
+//			if (stack.contains(x)) {
+//				answer = "D";
+//				break;
+//			}else stack.push(x);
+//		}
+
+		// HashMap sol
+//		HashMap<Integer,Integer> map = new HashMap<>();
+//		for(int x : arr){
+//			map.put(x,map.getOrDefault(x,0)+1);
+//			if(map.get(x) > 1) answer = "D";
+//		}
+
+		// Array.sort sol
+		Arrays.sort(arr);
+		for (int i = 0; i < n - 1; i++) {
+			if (arr[i] == arr[i + 1]) {
+				return "D";
 			}
 		}
+
 		return answer;
 	}
 
