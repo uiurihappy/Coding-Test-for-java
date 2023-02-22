@@ -7,7 +7,7 @@ class Problem5 {
 	public String solution (int n, int[] arr){
 		String answer = "U";
 
-		// first sol
+		// first sol o(nlogn)
 //		for (int i = 0; i < arr.length; i++) {
 //			int temp = arr[i];
 //			for (int j = i + 1; j < arr.length; j++) {
@@ -37,11 +37,8 @@ class Problem5 {
 
 		// Array.sort sol
 		Arrays.sort(arr);
-		for (int i = 0; i < n - 1; i++) {
-			if (arr[i] == arr[i + 1]) {
-				return "D";
-			}
-		}
+		for (int i = 0; i < n - 1; i++)
+			if (arr[i] == arr[i + 1]) return "D";
 
 		return answer;
 	}
