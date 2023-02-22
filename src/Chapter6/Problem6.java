@@ -2,6 +2,14 @@ package Chapter6;
 
 import java.util.*;
 
+/**
+ * 장난꾸러기
+ * input
+9
+120 125 152 130 135 135 143 127 160
+ * output
+3 8
+ */
 class Problem6 {
 
 	public ArrayList<Integer> solution (int n, int[] arr) {

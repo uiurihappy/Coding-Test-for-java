@@ -2,6 +2,19 @@ package Chapter6;
 
 import java.util.*;
 
+/**
+ * 중복 확인
+ * input 1
+8
+20 25 52 30 39 33 43 33
+ * output 1
+ D
+ * input 1
+ 8
+ 20 25 52 30 39 33 43 38
+ * output 1
+ U
+ */
 class Problem5 {
 
 	public String solution (int n, int[] arr){
