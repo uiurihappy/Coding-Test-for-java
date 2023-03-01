@@ -2,10 +2,43 @@ package Chapter6;
 
 import java.util.*;
 
+/**
+ * 마구간 정하기(결정알고리즘)
+ * input
+ 5 3
+ 1 2 8 4 9
+ * output
+ 3
+ */
 class Problem10 {
 
-    private int solution(int n, int xi, int[] arr) {
+    public int count(int[] arr, int dist) {
+        int cnt = 1, endPoint = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] - endPoint >= dist) {
+                cnt++;
+                endPoint = arr[i];
+            }
+        }
+        return cnt;
+    }
+
+    public int solution(int n, int c, int[] arr) {
         int answer = 0;
+        Arrays.sort(arr);
+        int lt = 1;
+        int rt = arr[n-1];  // 배열 끝 값
+
+        // 이분 검색
+        while (lt <= rt) {
+            int mid = (lt + rt) / 2;
+
+            if (count(arr, mid) >= c) {
+                answer = mid;
+                lt = mid + 1;
+            } else rt = mid - 1;
+        }
 
         return answer;
     }
@@ -14,14 +47,14 @@ class Problem10 {
         Problem10 T = new Problem10();
         Scanner kb = new Scanner(System.in);
         int n = kb.nextInt();
-        int xi = kb.nextInt();
+        int c = kb.nextInt();
         int[] arr = new int[n];
 
         for (int i = 0; i < n; i++) {
             arr[i] = kb.nextInt();
         }
 
-        System.out.println(T.solution(n, xi, arr));
+        System.out.println(T.solution(n, c, arr));
     }
 
 
