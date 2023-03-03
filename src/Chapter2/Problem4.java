@@ -2,6 +2,14 @@ package Chapter2;
 
 import java.util.Scanner;
 
+/**
+ * 피보나치 수열
+ * for문
+ * input
+ 10
+ * output
+ 1 1 2 3 5 8 13 21 34 55
+ */
 class Problem4 {
 //      solution 1
     public void solution (int n) {

@@ -43,6 +43,8 @@ public class DFS_Practice {
 					DFS(root.lt, orderKey);
 					DFS(root.rt, orderKey);
 					System.out.print(root.data + " ");
+				default:
+					System.out.println("Not found orderKey!");
 			}
 		}
 
