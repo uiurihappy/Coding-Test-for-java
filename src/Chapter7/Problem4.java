@@ -48,6 +48,23 @@ class Problem4 {
 
 		System.out.println();
 
+		// solution 2
+		// STEP 1. 결과값을 담을 배열 선언
+		final int[] arr = new int[n + 1];
+
+		// STEP 2. 첫번째 항과 두번쨰 항 미리 선언
+		arr[1] = 1;
+		arr[2] = 1;
+
+		// STEP 3. 반복문을 이용하여, 계속해서 더해 나간다.
+		System.out.print(arr[1] + " " + arr[2] + " ");
+		for (int i = 3; i <= n; i++) {
+			arr[i] = arr[i - 1] + arr[i - 2];
+			System.out.print(arr[i] + " ");
+		}
+
+		System.out.println();
+
 		Number number1 = new Number();
 		Number number2 = new Number();
 
