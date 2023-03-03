@@ -24,6 +24,7 @@ public class DFS_Practice {
 
 		// 말단 노드일 때,
 		if (root == null) return;
+		// 노드 data 값이 null 아닌 경우 key 따른 로직 실행
 		else {
 			switch (orderKey) {
 				case "pre":
@@ -43,8 +44,10 @@ public class DFS_Practice {
 					DFS(root.lt, orderKey);
 					DFS(root.rt, orderKey);
 					System.out.print(root.data + " ");
+					break;
 				default:
 					System.out.println("Not found orderKey!");
+					break;
 			}
 		}
 
