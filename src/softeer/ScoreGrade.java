@@ -18,6 +18,22 @@ public class ScoreGrade {
 		public int compareTo(Gamer o) {
 			return o.score - this.score;
 		}
+
+		public int getIdx() {
+			return idx;
+		}
+
+		public void setIdx(int idx) {
+			this.idx = idx;
+		}
+
+		public int getScore() {
+			return score;
+		}
+
+		public void setScore(int score) {
+			this.score = score;
+		}
 	}
 
 	public static int[] getGrade(PriorityQueue<Gamer> pq) {
@@ -29,6 +45,7 @@ public class ScoreGrade {
 		int prevScore = nowGamer.score;
 		grades[nowGamer.idx] = nowGrade;
 		int gradeIdx = 1;
+		// 첫 번째 queue를 대상으로 비교 시작
 		while(!pq.isEmpty()) {
 			nowGamer = pq.poll();
 			if(prevScore == nowGamer.score) {
@@ -61,8 +78,8 @@ public class ScoreGrade {
 				int score = Integer.parseInt(game[j]);
 				totalScore[j] += score;
 				priorityQueue.offer(new Gamer(j, score));
-			}
 
+			}
 			int[] grades = getGrade(priorityQueue);
 
 			for (int grade : grades)
@@ -79,9 +96,8 @@ public class ScoreGrade {
 
 		int[] finalGrade = getGrade(finalQueue);
 
-		for (int grade : finalGrade) {
+		for (int grade : finalGrade)
 			System.out.print(grade + " ");
-		}
 
 		System.out.println();
 	}
