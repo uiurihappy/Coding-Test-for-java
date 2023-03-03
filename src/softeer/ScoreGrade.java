@@ -5,6 +5,29 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
+/** 성적 평가
+ * input 1
+ 3
+ 40 80 70
+ 50 10 20
+ 100 70 30
+ * output 1
+ 3 1 2
+ 1 3 2
+ 1 2 3
+ 1 2 3
+
+ * input 2
+ 3
+ 1000 1000 700
+ 300 100 400
+ 200 400 400
+ * output 2
+ 1 1 3
+ 2 3 1
+ 3 1 1
+ 1 1 1
+ */
 public class ScoreGrade {
 
 	static class Gamer implements Comparable<Gamer>{

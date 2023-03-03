@@ -20,9 +20,11 @@ class Problem4 {
 
 	// 1이나 2면 바로 return;
 	public int solution(int n) {
-		if (n == 1) return 1;
-		else if (n == 2) return 1;
-		else return solution(n - 2) + solution(n - 1);
+		if (fibo[n] > 0) return fibo[n];
+
+		if (n == 1) return fibo[n] = 1;
+		else if (n == 2) return fibo[n] = 1;
+		else return fibo[n] = solution(n - 2) + solution(n - 1);
 	}
 
 	public static void main(String[] args) {
@@ -30,8 +32,9 @@ class Problem4 {
 		Scanner kb = new Scanner(System.in);
 		int n = kb.nextInt();
 		fibo = new int[n + 1];
+		T.solution(n);
 		for (int i = 1; i <= n; i++) {
-			System.out.print(T.solution(i) + " ");
+			System.out.print(fibo[i] + " ");
 		}
 
 		System.out.println();
