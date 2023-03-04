@@ -2,6 +2,17 @@ package Chapter1;
 
 import java.util.*;
 
+/** 단어 뒤집기
+ * input
+ 3
+ good
+ Time
+ Big
+ * output
+ doog
+ emiT
+ giB
+ */
 class Problem4 {
 
 	public ArrayList<String> solution (int n, String[] str){
@@ -40,12 +51,10 @@ class Problem4 {
 		int n = kb.nextInt();
 		String[] str = new String[n];
 
-		for (int i = 0; i < n; i++) {
+		for (int i = 0; i < n; i++)
 			str[i] = kb.next();
-		}
 
-		for (String x : T.solution(n, str)) {
+		for (String x : T.solution(n, str))
 			System.out.println(x);
-		}
 	}
 }

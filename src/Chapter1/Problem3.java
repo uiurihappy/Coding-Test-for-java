@@ -2,6 +2,12 @@ package Chapter1;
 
 import java.util.*;
 
+/** 문장 속 단어
+ * input
+ it is time to study
+ * output
+ study
+ */
 class Problem3 {
 
 	public String solution(String str) {

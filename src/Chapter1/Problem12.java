@@ -2,6 +2,13 @@ package Chapter1;
 
 import java.util.Scanner;
 
+/** 암호
+ * input
+ 4
+ #****###**#####**#####**##**
+ * output
+ COOL
+ */
 class Problem12 {
 
 //	public String solution(int n, String str){
@@ -22,7 +29,7 @@ class Problem12 {
 
 		for (int i = 0; i < n; i++) {
 			String temp = str.substring(0, 7).replace('#', '1').replace('*', '0');
-			int num = Integer.parseInt(temp, 2);
+			int num = Integer.parseInt(temp, 2);	// 이진수
 			answer += (char) num;
 
 			str = str.substring(7);

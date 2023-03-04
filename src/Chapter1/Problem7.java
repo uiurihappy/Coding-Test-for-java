@@ -1,9 +1,10 @@
 package Chapter1;
 
 import java.util.Scanner;
-/*
-	input:  gooG
-	output: YES
+
+/** 회문 문자열
+ * input:  gooG
+ * output: YES
  */
 class Problem7 {
 
@@ -41,9 +42,8 @@ class Problem7 {
 		String answer = "YES";
 		String temp = new StringBuilder(str).reverse().toString();
 
-		if (!str.equalsIgnoreCase(temp)){
+		if (!str.equalsIgnoreCase(temp))
 			return "NO";
-		}
 
 		return answer;
 	}

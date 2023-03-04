@@ -1,9 +1,9 @@
 package Chapter1;
 
 import java.util.Scanner;
-/*
-	input:  g0en2T0s8eSoft
-	output: 208
+/** 숫자만 추출
+ * input:  g0en2T0s8eSoft
+ * output: 208
  */
 class Problem9 {
 

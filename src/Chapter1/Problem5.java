@@ -2,6 +2,12 @@ package Chapter1;
 
 import java.util.*;
 
+/** 특정 문자 뒤집기
+ * input
+ a#b!GE*T@S
+ * output
+ S#T!EG*b@a
+ */
 class Problem5 {
 
 	public String solution(String str) {

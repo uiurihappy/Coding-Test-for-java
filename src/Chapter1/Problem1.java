@@ -2,6 +2,13 @@ package Chapter1;
 
 import java.util.Scanner;
 
+/** 문자 찾기
+ * input
+ Computercooler
+ c
+ * output
+ 2
+ */
 class Problem1 {
 
 	public int solution(String str, char t){

@@ -2,9 +2,9 @@ package Chapter1;
 
 import java.util.Scanner;
 
-/*
-	input: found7, time: study; Yduts; emit, 7Dnuof
-	output: YES
+/** 유효한 팰린드롬
+ * input: found7, time: study; Yduts; emit, 7Dnuof
+ * output: YES
  */
 class Problem8 {
 

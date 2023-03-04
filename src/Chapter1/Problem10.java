@@ -1,9 +1,9 @@
 package Chapter1;
 
 import java.util.*;
-/*
-	input: 	teachermode e
-	output	1 0 1 2 1 0 1 2 2 1 0
+/** 가장 짧은 문자거리
+ * input: teachermode e
+ * output: 1 0 1 2 1 0 1 2 2 1 0
  */
 
 class Problem10 {
@@ -13,7 +13,7 @@ class Problem10 {
 		int p = 1000;
 
 		// 왼쪽으로부터 떨어진 거리 계산
-		for (int i =0; i < str.length(); i++){
+		for (int i = 0; i < str.length(); i++){
 			if (str.charAt(i) == t) {
 				p = 0;
 			} else {
@@ -21,6 +21,12 @@ class Problem10 {
 			}
 			answer[i] = p;
 		}
+
+//		for (int x : answer)
+//			System.out.print(x + " ");
+//
+//		System.out.println();
+
 		// init p
 		p = 1000;
 

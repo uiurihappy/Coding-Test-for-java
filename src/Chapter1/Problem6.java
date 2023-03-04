@@ -1,9 +1,9 @@
 package Chapter1;
 
 import java.util.Scanner;
-/*
-	input:  ksekkset
-	output: kset
+/** 중복문자제거
+ * input:  ksekkset
+ * output: kset
  */
 class Problem6 {
 
