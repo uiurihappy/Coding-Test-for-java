@@ -2,6 +2,14 @@ package Chapter2;
 
 import java.util.*;
 
+/**
+ * 뒤집은 소수
+ * input
+ 9
+ 32 55 62 20 250 370 200 30 100
+ * output
+ 23 2 73 2 3
+ */
 class Problem6 {
 
 	public boolean isPrime(int num) {
@@ -25,13 +33,12 @@ class Problem6 {
 			int res = 0;
 			// temp = 123
 			while (temp > 0) {
-				int t = temp % 10;
-				res = res * 10 + t;
-				temp = temp / 10;
+				int t = temp % 10;		// 일의 자리
+				res = res * 10 + t;		// 10배씩 증감
+				temp = temp / 10;		// temp는 감소
 			}
 			if (isPrime(res)) answer.add(res);
 		}
-
 
 		return answer;
 	}
@@ -42,13 +49,11 @@ class Problem6 {
 		int n = kb.nextInt();
 		int[] arr = new int[n];
 
-		for (int i = 0; i < n; i++) {
+		for (int i = 0; i < n; i++)
 			arr[i] = kb.nextInt();
-		}
 
-		for (int x : T.solution(arr)) {
+		for (int x : T.solution(arr))
 			System.out.print(x + " ");
-		}
 
 	}
 }

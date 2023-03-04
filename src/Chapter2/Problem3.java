@@ -2,13 +2,12 @@ package Chapter2;
 
 import java.util.Scanner;
 
-/*
-    input:
+/** 가위바위보
+ * input:
     5
     2 3 3 1 3
     1 1 2 2 3
-
-    output:
+ * output:
     A
     B
     A
@@ -44,16 +43,14 @@ class Problem3 {
         int[] arrA = new int[n];
         int[] arrB = new int[n];
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
             arrA[i] = kb.nextInt();
-        }
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
             arrB[i] = kb.nextInt();
-        }
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
             System.out.println(T.solution(n, arrA[i], arrB[i]));
-        }
+
     }
 }

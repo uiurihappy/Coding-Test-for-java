@@ -2,11 +2,11 @@ package Chapter2;
 
 import java.util.Scanner;
 
-/*
-	점수 계산
-	input: 10
-	1 0 1 1 1 0 0 1 1 0
-	output: 10
+/** 점수 계산
+ input:
+ 10
+ 1 0 1 1 1 0 0 1 1 0
+ output: 10
  */
 class Problem7 {
 

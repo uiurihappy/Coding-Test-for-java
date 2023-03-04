@@ -2,6 +2,14 @@ package Chapter2;
 
 import java.util.Scanner;
 
+/** 보이는 학생
+ * input
+ 8
+ 130 135 148 140 145 150 150 153
+
+ * output
+ 5
+ */
 class Problem2 {
 
     public Integer solution (int n, int[] arr) {
@@ -23,9 +31,9 @@ class Problem2 {
         int n = kb.nextInt();
         int[] arr = new int[n];
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
             arr[i] = kb.nextInt();
-        }
+
         System.out.println(T.solution(n, arr));
     }
 }

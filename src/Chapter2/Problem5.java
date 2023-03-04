@@ -2,10 +2,9 @@ package Chapter2;
 
 import java.util.Scanner;
 
-/*
-	에라토스테네스 체 방법: 체크로 걸러서 소수 갯수를 구한다.
-	input: 20
-	output: 8
+/** 에라토스테네스 체 방법: 체크로 걸러서 소수 갯수를 구한다.
+ * input: 20
+ * output: 8
  */
 
 class Problem5 {
