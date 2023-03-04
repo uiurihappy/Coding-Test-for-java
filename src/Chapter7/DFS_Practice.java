@@ -9,18 +9,18 @@ package Chapter7;
  * 말단 노드의 값은 null
  */
 
-class Node {
+class NodeDFS {
 	int data;
-	Node lt, rt;
-	public Node (int val) {
+	NodeDFS lt, rt;
+	public NodeDFS (int val) {
 		data = val;
 		lt = rt = null;
 	}
 }
 
 public class DFS_Practice {
-	Node root;
-	public void DFS (Node root, String orderKey) {
+	NodeDFS root;
+	public void DFS (NodeDFS root, String orderKey) {
 
 		// 말단 노드일 때,
 		if (root == null) return;
@@ -55,15 +55,15 @@ public class DFS_Practice {
 	public static void main(String[] args) {
 		DFS_Practice tree = new DFS_Practice();
 		// 부모
-		tree.root = new Node(1);
+		tree.root = new NodeDFS(1);
 
-		tree.root.lt = new Node(2);
-		tree.root.rt = new Node(3);
+		tree.root.lt = new NodeDFS(2);
+		tree.root.rt = new NodeDFS(3);
 
-		tree.root.lt.lt = new Node(4);
-		tree.root.lt.rt = new Node(5);
-		tree.root.rt.lt = new Node(6);
-		tree.root.rt.rt = new Node(7);
+		tree.root.lt.lt = new NodeDFS(4);
+		tree.root.lt.rt = new NodeDFS(5);
+		tree.root.rt.lt = new NodeDFS(6);
+		tree.root.rt.rt = new NodeDFS(7);
 		String[] orderKey = {"pre", "in", "post"};
 		for (String key : orderKey) {
 			System.out.println(key + "-order");
