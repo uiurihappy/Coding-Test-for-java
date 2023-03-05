@@ -31,8 +31,8 @@ public class laboratory {
 
     private static void funcSafeZone(int[][] copyMap) {
         int safeZone =0;
-        for(int i=0; i<n ; i++) {
-            for(int j=0; j<m; j++) {
+        for(int i = 0; i < n ; i++) {
+            for(int j = 0; j < m; j++) {
                 if(copyMap[i][j] == 0) {
                     safeZone++;
                 }
@@ -46,8 +46,8 @@ public class laboratory {
     static void bfs() {
         Queue<Node> q = new LinkedList<>();
 
-        for(int i=0; i<n; i++) {
-            for(int j=0; j<m; j++) {
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < m; j++) {
                 if(originalMap[i][j] == 2) {
                     q.add(new Node(i,j));
                 }
@@ -55,11 +55,11 @@ public class laboratory {
         }
 
         //원본 연구소를 바꾸지 않기 위한 카피맵 사용
-        int copyMap[][] = new int[n][m];
+        int cloneMap[][] = new int[n][m];
 
-        for (int i = 0; i < n; i++) {
-            copyMap[i] = originalMap[i].clone();
-        }
+        // clone
+        for (int i = 0; i < n; i++)
+            cloneMap[i] = originalMap[i].clone();
 
         //BFS 탐색 시작
         while(!q.isEmpty()) {
@@ -67,22 +67,20 @@ public class laboratory {
             int x = now.x; // 현재 값
             int y = now.y; //
 
-            for(int k=0; k<4; k++) {
+            for(int k = 0; k < 4; k++) {
                 int nx = x + dx[k];
                 int ny = y + dy[k];
 
                 //연구소 범위 밖이 아니고 빈칸일 경우에만 바이러스를 퍼트린다.
-                if(0<=nx && nx<n && 0<=ny && ny<m) {
-                    if(copyMap[nx][ny] == 0) {
+                if (0 <= nx && 0 <= ny && nx < n && ny < m && cloneMap[nx][ny] == 0) {
                         q.add(new Node(nx,ny));
-                        copyMap[nx][ny] = 2;
-                    }
+                        cloneMap[nx][ny] = 2;
                 }
             }
         }
 
         //SafeZone 확인
-        funcSafeZone(copyMap);
+        funcSafeZone(cloneMap);
     }
 
     static void dfs(int wallCnt) {
@@ -92,8 +90,8 @@ public class laboratory {
             return;
         }
 
-        for(int i=0; i<n; i++) {
-            for(int j=0; j<m; j++) {
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < m; j++) {
                 if(originalMap[i][j] == 0) {
                     originalMap[i][j] = 1;
                     dfs(wallCnt+1);
@@ -111,9 +109,9 @@ public class laboratory {
         m = Integer.parseInt(st.nextToken());
         originalMap = new int[n][m];
 
-        for(int i=0; i<n; i++) {
+        for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
-            for(int j=0; j<m; j++) {
+            for (int j = 0; j < m; j++) {
                 originalMap[i][j] = Integer.parseInt(st.nextToken());
             }
         }
@@ -122,6 +120,5 @@ public class laboratory {
 
         System.out.println(maxSafeZone);
     }
-
 
 }
