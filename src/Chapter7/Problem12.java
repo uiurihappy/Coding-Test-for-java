@@ -5,7 +5,6 @@ import java.io.*;
  * input
  * 정점의 수 N, 간선의 수 M
  6 9
-
  1 3
  1 4
  2 1
@@ -28,7 +27,7 @@ public class Problem12 {
     static int answer = 0;
     static ArrayList<ArrayList<Integer>> graph;
     static int n, m;
-    static int[] dis, ch;
+    static int[] dis, visited;
     public static void bfs(int v) {
         Queue<Integer> queue = new LinkedList<>();
         queue.offer(v);
@@ -40,8 +39,8 @@ public class Problem12 {
                 dis[cur] = L;
                 for (int nv : graph.get(cur)) {
                     // 방문 체크
-                    if (ch[nv] == 0) {
-                        ch[nv] = 1;
+                    if (visited[nv] == 0) {
+                        visited[nv] = 1;
                         queue.offer(nv);
                     }
                 }
@@ -68,10 +67,10 @@ public class Problem12 {
             graph.get(a).add(b);
         }
         // 방문 배열, 거리 배열 init
-        ch = new int[n + 1];
+        visited = new int[n + 1];
         dis = new int[n + 1];
 
-        ch[1] = 1;
+        visited[1] = 1;
 
         // 1번 정점부터 시작
         bfs(1);
