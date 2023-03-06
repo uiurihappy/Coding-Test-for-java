@@ -5,19 +5,18 @@ import java.util.*;
 public class Problem2 {
 	public ArrayList<Integer> solution(int n, int[] bi, int[] ci) {
 		ArrayList<Integer> answer = new ArrayList<>();
-		Queue<Integer> queue = new LinkedList<>();
+		PriorityQueue<Integer> queue = new PriorityQueue<>();
 		for (int i = 0; i < n; i++)
 			queue.offer(bi[i]);
-		System.out.println(queue.peek());
-		int i = 0;
+
 		while(!queue.isEmpty()) {
-			OptionalInt first = Arrays.stream(bi).findFirst();
-			System.out.println(first.getAsInt() == ci[i] || queue.peek() == ci[i]);
-			if (first.getAsInt() == ci[i] || queue.peek() == ci[i]) {
-				answer.add(queue.poll());
-				i++;
-			} else {
-				queue.offer(queue.poll());
+			int item = queue.poll();
+			System.out.println(item);
+			for (int i = 0; i < bi.length; i++) {
+				System.out.println(ci[i] + " " + bi[i] + " " + item);
+				if (ci[i] == bi[i] || item == bi[i]) {
+					answer.add(item);
+				}
 			}
 			queue.poll();
 		}
