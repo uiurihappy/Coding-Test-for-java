@@ -141,54 +141,66 @@ public class Problem1 {
 		// 기본 요금
 		for (int i = 1; i < fees.length; i++) {
 			if (fees[i - 1][0] < usage && usage <= fees[i][0]) {
+				System.out.println(1);
 				// 중간
-				answer += fees[i][1];
-				break;
+				answer = fees[i][1];
 			} else if (fees[i][0] == 0 && usage <= fees[i][0]) {
-				answer += fees[i - 1][1];
-				break;
+				System.out.println(2);
+				answer = fees[i - 1][1];
 			} else if (fees[i][0] == 0 && fees[i - 1][0] < usage) {
-				answer += fees[i][1];
-				break;
-			} else if (fees[fees.length - 2][0] < usage){
-				answer += fees[fees.length - 1][1];
-				break;
-			} else {
-				answer += fees[i - 1][1];
-				break;
+				System.out.println(3);
+				answer = fees[i][1];
+			} else if (fees[fees.length - 2][0] < usage) {
+				System.out.println(4);
+				answer = fees[fees.length - 1][1];
 			}
-
 		}
-
+		System.out.println(answer);
 		// 1번 index 더해놓기
 		if (fees[0][0] < usage){
 			answer += fees[0][0] * fees[0][2];
 			temp += fees[0][0];
 		}
-		System.out.println("temp = " + temp);
 		int diff = 0;
 
 		for (int i = 1; i < fees.length; i++) {
-			if (fees[i][0] != 0) {
-				diff = 0;
-				diff = fees[i][0] - fees[i - 1][0];
-			} else {
-				temp = usage - fees[i - 1][0];
-			}
-			System.out.println(diff);
-			System.out.println(temp);
-			if (fees[i - 1][0] < diff && diff <= fees[i][0] ) {
-				answer += (diff * fees[i][2]);
-				temp += fees[i][0];
-			} else if (usage <= fees[i - 1][0]) {
-				temp += fees[i][0];
+			if (usage <= fees[i - 1][0]) {
+				// 3번 케이스
 				answer += (usage * fees[i - 1][2]);
 				break;
-			} else if (usage > fees[i - 1][0] && fees[i][0] == 0) {
-				answer += (temp * fees[i][2]);
+			} else if (usage <= fees[i][0]) {
+				answer += ((fees[i][0] - fees[i - 1][0]) * fees[i][2]);
+				temp += (fees[i][0] - fees[i - 1][0]);
+			} else if (fees[i][0] == 0) {
+				answer += ((usage - temp) * fees[i][2]);
+				break;
+			}else {
+				answer += ((fees[i][0] - fees[i - 1][0]) * fees[i][2]);
+				break;
 			}
-
 		}
+
+//		for (int i = 1; i < fees.length; i++) {
+//			if (fees[i][0] != 0) {
+//				diff = 0;
+//				diff = fees[i][0] - fees[i - 1][0];
+//			} else {
+//				temp = usage - fees[i - 1][0];
+//			}
+//			System.out.println(diff);
+//			System.out.println(temp);
+//			if (fees[i - 1][0] < diff && diff <= fees[i][0] ) {
+//				answer += (diff * fees[i][2]);
+//				temp += fees[i][0];
+//			} else if (usage <= fees[i - 1][0]) {
+//				temp += fees[i][0];
+//				answer += (usage * fees[i - 1][2]);
+//				break;
+//			} else if (usage > fees[i - 1][0] && fees[i][0] == 0) {
+//				answer += (temp * fees[i][2]);
+//			}
+//
+//		}
 		return answer;
 	}
 
