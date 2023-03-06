@@ -1,10 +1,8 @@
 package Chapter7;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
+import java.util.*;
 
-/** 송아지 점프 (최단 거리 알고리즘, BFS)
+/** 송아지 찾기 (최단 거리 알고리즘, BFS)
  * input
  * 5 14
  * output

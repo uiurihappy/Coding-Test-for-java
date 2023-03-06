@@ -13,18 +13,23 @@ import java.util.*;
 class Problem8 {
 
 	public int solution(int n, int m, int[] arr) {
-		int lt = 0, rt = n - 1;
-		Arrays.sort(arr);
-
+		int left = 0, right = n - 1;
+//		Arrays.sort(arr);
+		int mid;
 		// 이분 검색, 점점 rt, lt 범위를 좁혀나간다.
-		while(lt <= rt) {
-			int mid = (lt + rt) / 2;
+		while (left <= right) {
+			mid = (right + left) / 2;
 
+			// 원하는 값을 찾았다면 그 위치를 반환.
 			if (arr[mid] == m) {
-				return mid + 1;
+				return mid;
 			}
-			if (arr[mid] > m) rt = mid - 1;
-			else lt = mid + 1;
+
+			if (m < arr[mid]) {
+				right = mid - 1;
+			} else {
+				left = mid + 1;
+			}
 		}
 
 		return -1;
