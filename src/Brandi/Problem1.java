@@ -141,18 +141,25 @@ public class Problem1 {
 		// 기본 요금
 		for (int i = 1; i < fees.length; i++) {
 			if (fees[i - 1][0] < usage && usage <= fees[i][0]) {
-				System.out.println(1);
 				// 중간
 				answer = fees[i][1];
-			} else if (fees[i][0] == 0 && usage <= fees[i][0]) {
-				System.out.println(2);
-				answer = fees[i - 1][1];
-			} else if (fees[i][0] == 0 && fees[i - 1][0] < usage) {
-				System.out.println(3);
-				answer = fees[i][1];
-			} else if (fees[fees.length - 2][0] < usage) {
-				System.out.println(4);
+				break;
+			}
+//			else if (fees[i][0] == 0 && usage <= fees[i][0]) {
+//				System.out.println(2);
+//				answer = fees[i - 1][1];
+//				break;
+//			} else if (fees[i][0] == 0 && fees[i - 1][0] < usage) {
+//				System.out.println(3);
+//				answer = fees[i][1];
+//				break;
+//			}
+			else if (fees[fees.length - 2][0] < usage) {
 				answer = fees[fees.length - 1][1];
+				break;
+			} else if (fees[i][0] == 0 && usage <= fees[i - 1][0]) {
+				answer = fees[i - 1][1];
+				break;
 			}
 		}
 		System.out.println(answer);
@@ -168,7 +175,7 @@ public class Problem1 {
 				// 3번 케이스
 				answer += (usage * fees[i - 1][2]);
 				break;
-			} else if (usage <= fees[i][0]) {
+			} else if (fees[i-1][0] < usage && usage <= fees[i][0]) {
 				answer += ((fees[i][0] - fees[i - 1][0]) * fees[i][2]);
 				temp += (fees[i][0] - fees[i - 1][0]);
 			} else if (fees[i][0] == 0) {
