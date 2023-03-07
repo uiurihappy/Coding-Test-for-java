@@ -12,6 +12,7 @@ import java.util.*;
  1 4
  2 1
  2 3
+ 2 5
  3 4
  4 2
  4 5
@@ -21,12 +22,22 @@ import java.util.*;
  */
 public class Problem9 {
 
+    static int answer = 0;
     static ArrayList<ArrayList<Integer>> graph;
     static int n, m;
     static int[] dis, visited;
 
-    public static void bfs(int v) {
-
+    public static void dfs(int v) {
+        if (v == n) answer++;
+        else {
+            for (int i = 0; i <= n; i++) {
+                if (graph.get(v).get(i) == 1 && visited[i] == 0) {
+                    visited[i] = 1;
+                    dfs(i);
+                    visited[i] = 0;
+                }
+            }
+        }
     }
 
     public static void main(String[] args) throws IOException {
@@ -47,21 +58,17 @@ public class Problem9 {
             st = new StringTokenizer(br.readLine());
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
-            graph.get(a).add(b);
+            graph.get(a).set(b, 1);
         }
 
         // 방문 배열, 거리 배열 init
         visited = new int[n + 1];
-        dis = new int[n + 1];
 
         visited[1] = 1;
 
         // 1번 정점부터 시작
-        T.bfs(1);
-
-        // 1부터 시작하니 1은 할 필요 없음
-        for (int i = 2; i <= n; i++)
-            System.out.println(i + " : " + dis[i]);
+        dfs(1);
+        System.out.println();
 
     }
 }
