@@ -49,16 +49,16 @@ public class Problem9 {
         m = Integer.parseInt(st.nextToken());
 
         // 그래프 init
-        graph = new ArrayList<>();
+        graph = new ArrayList<ArrayList<Integer>>();
         for (int i = 0; i <= n; i++)
-            graph.add(new ArrayList<>());
+            graph.add(new ArrayList<Integer>());
 
         // 그래프 insert
         for (int i = 0; i < m; i++) {
             st = new StringTokenizer(br.readLine());
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
-            graph.get(a).set(b, 1);
+            graph.get(a).add(b);
         }
 
         // 방문 배열, 거리 배열 init
