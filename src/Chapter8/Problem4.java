@@ -3,6 +3,23 @@ package Chapter8;
 import java.io.*;
 import java.util.*;
 
+/** 중복 순열
+ * 1부터 n번의 공들이 있는데 m만큼 꺼낸 공의 조합 출력
+ * 단, 오름차순
+ * input1
+ n m
+ 3 2
+ * output2
+ 1 1
+ 1 2
+ 1 3
+ 2 1
+ 2 2
+ 2 3
+ 3 1
+ 3 2
+ 3 3
+ */
 public class Problem4 {
 
 	static int n, m;
