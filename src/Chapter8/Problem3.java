@@ -21,7 +21,6 @@ public class Problem3 {
 	static int[] ps;
 	static int[] pt;
 	static int answer = Integer.MIN_VALUE;
-	boolean flag = false;
 
 	public void DFS(int L, int sum, int time, int[]ps, int[] pt) {
 		if (time > m) return;
