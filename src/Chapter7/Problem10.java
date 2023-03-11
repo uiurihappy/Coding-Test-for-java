@@ -8,9 +8,18 @@ import java.util.StringTokenizer;
 
 /** 인접리스트, ArrayList
  * input1
-
+ 5 9
+ 1 2
+ 1 3
+ 1 4
+ 2 1
+ 2 3
+ 2 5
+ 3 4
+ 4 2
+ 4 5
  * output1
-
+ 6
  */
 public class Problem10 {
 
