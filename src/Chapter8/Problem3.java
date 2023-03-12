@@ -52,8 +52,5 @@ public class Problem3 {
 
 		T.DFS(0, 0, 0, ps, pt);
 		System.out.println(answer);
-
-
-
 	}
 }
