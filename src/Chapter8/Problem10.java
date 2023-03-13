@@ -1,7 +1,19 @@
 package Chapter8;
 
-import java.util.Scanner;
+import java.util.*;
 
+/** 미로 탐색 (DFS)
+ * input1
+ 0 0 0 0 0 0 0
+ 0 1 1 1 1 1 0
+ 0 0 0 1 0 0 0
+ 1 1 0 1 0 1 1
+ 1 1 0 0 0 0 1
+ 1 1 0 1 1 0 0
+ 1 0 0 0 0 0 0
+ * output1
+ 8
+ */
 public class Problem10 {
 
 	static int[] dx = {-1, 0, 1, 0}, dy = {0, 1, 0, -1};
