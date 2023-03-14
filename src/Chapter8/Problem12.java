@@ -1,8 +1,6 @@
 package Chapter8;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
+import java.util.*;
 
 /** 토마토 (BFS)
  * input1
