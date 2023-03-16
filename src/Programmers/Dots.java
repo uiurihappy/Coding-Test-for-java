@@ -22,25 +22,23 @@ import java.util.*;
  */
 public class Dots {
 
-	static int status = 0;
+	static int answer = 0;
 	static int[][] dots;
 
 	public void solution(int[][] dots) {
-		ArrayList<Double> arr = new ArrayList<>();
-
+		double[] line = new double[6];
+		int idx = 0;
 		for (int i = 0; i < dots.length - 1; i++) {
-			if (status == 1) {
-				break;
-			} else {
-				for (int j = i + 1; j < dots.length; j++) {
-					double temp = (double) (dots[i][1] - dots[j][1]) / (dots[i][0] - dots[j][0]);
-					if (arr.contains(temp)) {
-						status = 1;
-						break;
-					} else {
-						arr.add(temp);
-					}
-				}
+			for (int j = i + 1; j < dots.length; j++) {
+				double temp = Math.abs((double) (dots[i][1] - dots[j][1]) / (double) (dots[i][0] - dots[j][0]));
+				line[idx] = temp;
+				idx++;
+			}
+		}
+		// 평행 체크
+		for(int k = 0; k < line.length-1 ; k++){
+			for(int m=k+1; m<line.length;m++) {
+				if (line[k] == line[m]) answer = 1;
 			}
 		}
 
@@ -62,6 +60,6 @@ public class Dots {
 //			System.out.println();
 //		}
 		T.solution(dots);
-		System.out.println(status);
+		System.out.println(answer);
 	}
 }
