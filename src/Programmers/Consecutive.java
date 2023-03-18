@@ -18,9 +18,9 @@ public class Consecutive {
         int[] answer = new int[num];
 
         int nSum = num * (num + 1) / 2;
-        int start = (total - nSum) / num;
+        int start = (total - nSum) / num + 1;
 
-        for (int i = 1; i <= num; i++)
+        for (int i = 0; i <= num; i++)
             answer[i - 1] = i + start;
 
         return answer;
