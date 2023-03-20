@@ -3,6 +3,39 @@ package Baekjoon;
 import java.io.*;
 import java.util.*;
 
+/** 연구소
+ * input1
+ 7 7
+ 2 0 0 0 1 1 0
+ 0 0 1 0 1 2 0
+ 0 1 1 0 1 0 0
+ 0 1 0 0 0 0 0
+ 0 0 0 0 0 1 1
+ 0 1 0 0 0 0 0
+ 0 1 0 0 0 0 0
+ * output1
+ 27
+ * input2
+ 4 6
+ 0 0 0 0 0 0
+ 1 0 0 0 0 2
+ 1 1 1 0 0 2
+ 0 0 0 0 0 2
+ * output2
+ 9
+ * input3
+ 8 8
+ 2 0 0 0 0 0 0 2
+ 2 0 0 0 0 0 0 2
+ 2 0 0 0 0 0 0 2
+ 2 0 0 0 0 0 0 2
+ 2 0 0 0 0 0 0 2
+ 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0
+ * output3
+ 3
+ */
 public class laboratory {
 
     static final int dx[] = {0,0,1,-1};  //상하좌우 방향 설정

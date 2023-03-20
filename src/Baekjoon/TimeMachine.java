@@ -3,6 +3,25 @@ package Baekjoon;
 import java.io.*;
 import java.util.StringTokenizer;
 
+/** 타임머신 (11657)
+ * input1
+ 3 4
+ 1 2 4
+ 1 3 3
+ 2 3 -1
+ 3 1 -2
+ * output1
+ 4
+ 3
+ * input2
+ 3 4
+ 1 2 4
+ 1 3 3
+ 2 3 -4
+ 3 1 -2
+ * output2
+ -1
+ */
 class Bus {
     // 시작점, 도착점, 걸리는 시간
     int start, end, weight;
