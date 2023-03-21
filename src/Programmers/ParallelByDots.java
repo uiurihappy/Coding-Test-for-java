@@ -20,7 +20,7 @@ import java.util.*;
  * output2
  0
  */
-public class Dots {
+public class ParallelByDots {
 
 	static int answer = 0;
 	static int[][] dots;
@@ -45,7 +45,7 @@ public class Dots {
 	}
 
 	public static void main(String[] args) {
-		Dots T = new Dots();
+		ParallelByDots T = new ParallelByDots();
 		Scanner kb = new Scanner(System.in);
 		dots = new int[4][2];
 
