@@ -43,11 +43,10 @@ public class Maze {
 	static int[] dy = {0, 0, -1, 1};
 	static int[][] visited;
 
-	public void BFS(int x, int y) {
+	public int BFS(int x, int y) {
 		Queue<PointMaze> queue = new LinkedList<>();
 		// 객체가 queue에 적재
-		queue.offer(new PointMaze(x, y));
-		board[x][y] = 1;
+		queue.offer(new PointMaze(0, 0));
 
 		while(!queue.isEmpty()) {
 			// 1,1 부터 퍼지기 시작한다.
@@ -56,14 +55,15 @@ public class Maze {
 				int nx = temp.x + dx[i];
 				int ny = temp.y + dy[i];
 
-				if (nx >= 1 && nx <= x && ny >= 1 && ny <= y && board[nx][ny] == 0) {
-					board[nx][ny] = 1;
+				if (nx >= 0 && nx < x && ny >= 0 && ny < y && board[nx][ny] == 1) {
 					queue.offer(new PointMaze(nx, ny));
-					visited[nx][ny] = visited[temp.x][temp.y] + 1;
+					board[nx][ny] = board[temp.x][temp.y] + 1;
+					if(ny == y - 1 && nx == x - 1)
+						break;
 				}
 			}
 		}
-
+		return board[x - 1][y - 1];
 	}
 
 	public static void main(String[] args) throws IOException{
@@ -78,14 +78,12 @@ public class Maze {
 		board = new int[n][m];
 		for(int i = 0; i < n; i++) {
 			String s = br.readLine();
-			for(int j = 0; j < m; j++) {
+			for(int j = 0; j < m; j++)
 				board[i][j] = s.charAt(j) - '0';
-			}
 		}
-		visited = new int[n][m];
-		visited[0][0] = 1;
-		T.BFS(0, 0);
-		System.out.println(visited[n-1][m-1]);
+
+
+		System.out.println(T.BFS(n, m));
 
 	}
 }
