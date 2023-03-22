@@ -2,6 +2,20 @@ package Programmers;
 
 import java.util.Scanner;
 
+/** 종이 자르기
+ * input1
+ 2 2
+ * output1
+ 3
+ * input2
+ 2 5
+ * output2
+ 9
+ * input3
+ 1 1
+ * output3
+ 0
+ */
 public class PaperCut {
 
     public int solution (int M, int N) {
