@@ -2,6 +2,16 @@ package Programmers;
 
 import java.util.*;
 
+/** n^2 배열 자르기
+ * input1
+ 3 2 5
+ * output1
+ 3 2 2 3
+ * input2
+ 4 7 14
+ * output2
+ 4 3 3 3 4 4 4 4
+ */
 public class ArrayCut {
 
     public List<Long> solution(int n, long left, long right) {
