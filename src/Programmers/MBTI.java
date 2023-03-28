@@ -1,6 +1,6 @@
 package Programmers;
 
-import java.util.Scanner;
+import java.util.*;
 
 /** 성격 유형 검사하기 (카카오)
  * input1
@@ -78,6 +78,43 @@ public class MBTI {
 //		answer = Tp1 + Tp2 + Tp3 + Tp4;
 
 		// sol 2 (Map 활용)
+
+		HashMap<Character, Integer> map = new HashMap<>();
+		map.put('R', 0); map.put('T', 0);
+		map.put('C', 0); map.put('F', 0);
+		map.put('J', 0); map.put('M', 0);
+		map.put('A', 0); map.put('N', 0);
+
+		for (int i = 0; i < survey.length; i++) {
+			// 4가 보통이니까 기준으로 잡는다.
+			if (choices[i] > 4)
+				map.put(survey[i].charAt(1), map.get(survey[i].charAt(1)) + choices[i] - 4);
+			else
+				map.put(survey[i].charAt(0), map.get(survey[i].charAt(0)) + 4 - choices[i]);
+
+		}
+
+		// map의 value check
+		if (map.get('R') >= map.get('T'))
+			answer += "R";
+		else
+			answer += "T";
+
+		if (map.get('C') >= map.get('F'))
+			answer += "C";
+		else
+			answer += "F";
+
+		if (map.get('J') >= map.get('M'))
+			answer += "J";
+		else
+			answer += "M";
+
+		if (map.get('A') >= map.get('N'))
+			answer += "A";
+		else
+			answer += "N";
+
 		return answer;
 	}
 
