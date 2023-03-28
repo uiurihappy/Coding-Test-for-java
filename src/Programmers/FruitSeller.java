@@ -18,13 +18,27 @@ public class FruitSeller {
 
 	public int solution(int k, int m, int[] score) {
 		int answer = 0;
-		Integer[] scoreArr = Arrays.stream(score).boxed().toArray(Integer[]::new);
-		Arrays.sort(scoreArr, Collections.reverseOrder());
 
-		for (int i = 0; i < scoreArr.length; i++) {
-			if ((i + 1) % m == 0)
-				answer += scoreArr[i] * m;      // m의 배수일 때만 해당 사과로 계산
-		}
+		// sol 1
+//		Integer[] scoreArr = Arrays.stream(score).boxed().toArray(Integer[]::new);
+//		Arrays.sort(scoreArr, Collections.reverseOrder());
+//
+//		for (int i = 0; i < scoreArr.length; i++) {
+//			if ((i + 1) % m == 0)
+//				answer += scoreArr[i] * m;      // m의 배수일 때만 해당 사과로 계산
+//		}
+
+		// sol 2
+//		Arrays.sort(score);
+//		for (int i = score.length; i >= m; i-=m)
+//			answer += score[i - m] * m;
+
+		// sol 3
+		Arrays.sort(score);
+
+		for (int i = score.length - 1; i >= 0; i--)
+			if ((score.length - i) % m == 0)
+				answer += score[i] * m;
 
 		return answer;
 	}
