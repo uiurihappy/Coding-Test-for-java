@@ -16,7 +16,7 @@ import java.util.*;
  * output2
  3
  */
-public class Babbling {
+public class Babbling1 {
 
     static int n, answer = 0;
     static String[] babbling;
@@ -41,7 +41,7 @@ public class Babbling {
     }
 
     public static void main(String[] args) {
-        Babbling T = new Babbling();
+        Babbling1 T = new Babbling1();
         Scanner kb = new Scanner(System.in);
         n = kb.nextInt();
         babbling = new String[n];
