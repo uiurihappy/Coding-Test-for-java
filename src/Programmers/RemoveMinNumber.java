@@ -2,6 +2,17 @@ package Programmers;
 
 import java.util.*;
 
+/** 가장 작은 수 제거하기
+ * input1
+ 4
+ 4 3 2 1
+ * output1
+ 4 3 2
+ * input2
+ 10
+ * output2
+ -1
+ */
 public class RemoveMinNumber {
 
 	public int[] solution(int[] arr) {
