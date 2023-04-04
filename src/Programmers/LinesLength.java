@@ -7,15 +7,14 @@ import java.util.*;
  0 1
  2 5
  3 9
+ * output1
+ 2
  * input2
  0 5
  3 9
  1 10
- * output1
- 2
  * output2
  8
-
  */
 public class LinesLength {
 
@@ -24,7 +23,7 @@ public class LinesLength {
 
 		int answer = 0;
 
-		Map<String, Integer> map = new HashMap<String, Integer>();
+		Map<String, Integer> map = new HashMap<>();
 
 		for (int[] line : lines) {
 			int tempMin = Math.min(line[0], line[1]);

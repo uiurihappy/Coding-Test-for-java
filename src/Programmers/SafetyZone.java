@@ -28,7 +28,6 @@ public class SafetyZone {
 	static int n, answer = 0;
 	static int[][] board;
 
-
 	public int solution(int[][] board) {
 		SafetyZone T = new SafetyZone();
 		int[][] boomBoard = new int[n][board[0].length];

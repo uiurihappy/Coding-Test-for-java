@@ -3,7 +3,15 @@ package Programmers;
 import java.util.*;
 
 /** 평균 구하기
- * input
+ * input1
+ 2
+ 5 5
+ * output2
+ 5
+ * input2
+ 1 2 2 5
+ * output2
+ 2.5
  */
 public class GetAverage {
 
