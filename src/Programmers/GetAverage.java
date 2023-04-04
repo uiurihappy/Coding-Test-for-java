@@ -2,6 +2,9 @@ package Programmers;
 
 import java.util.*;
 
+/** 평균 구하기
+ * input
+ */
 public class GetAverage {
 
 	public double solution(int[] arr) {
