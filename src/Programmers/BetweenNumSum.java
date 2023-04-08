@@ -2,6 +2,20 @@ package Programmers;
 
 import java.util.Scanner;
 
+/** 두 정수 사이의 합
+ * input1
+ 3 5
+ * output1
+ 12
+ * input2
+ 3 3
+ * output2
+ 3
+ * input3
+ 5 3
+ * output3
+ 12
+ */
 public class BetweenNumSum {
 
     public long solution(int a, int b) {
