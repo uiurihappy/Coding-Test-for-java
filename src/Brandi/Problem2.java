@@ -3,24 +3,51 @@ package Brandi;
 import java.util.*;
 
 public class Problem2 {
-	public ArrayList<Integer> solution(int n, int[] bi, int[] ci) {
-		ArrayList<Integer> answer = new ArrayList<>();
-		PriorityQueue<Integer> queue = new PriorityQueue<>();
-		for (int i = 0; i < n; i++)
-			queue.offer(bi[i]);
 
-		while(!queue.isEmpty()) {
-			int item = queue.poll();
-			System.out.println(item);
-			for (int i = 0; i < bi.length; i++) {
-				System.out.println(ci[i] + " " + bi[i] + " " + item);
-				if (ci[i] == bi[i] || item == bi[i]) {
-					answer.add(item);
+	public int[] solution(int[] ball, int[] order) {
+		int[] answer = new int[ball.length];
+		List<Integer> list = new ArrayList<>();
+		for (int b : ball) {
+			list.add(b);
+		}
+		int idx = 0;
+		int left = 0, right = list.size() - 1;
+		while (idx < order.length) {
+			int current = order[idx];
+			if (current == list.get(left)) {
+				answer[idx] = list.remove(left);
+				idx++;
+				continue;
+			} else if (current == list.get(right)) {
+				answer[idx] = list.remove(right);
+				idx++;
+				continue;
+			} else {
+				for (int i = left + 1; i < right; i++) {
+					int num = list.get(i);
+					if (current == num) {
+						answer[idx] = list.remove(i);
+						idx++;
+						break;
+					}
 				}
 			}
-			queue.poll();
+			// 공이 보류된 경우 (왼쪽과 오른쪽 어느쪽으로 빠져나갈 수 있어야 하는 경우)
+			if (idx < order.length) {
+				int next = order[idx];
+				int leftIdx = list.indexOf(next);
+				int rightIdx = list.lastIndexOf(next);
+				if (leftIdx == left + 1) {
+					answer[idx] = list.remove(leftIdx);
+					idx++;
+					left++;
+				} else if (rightIdx == right - 1) {
+					answer[idx] = list.remove(rightIdx);
+					idx++;
+					right--;
+				}
+			}
 		}
-
 		return answer;
 	}
 	public static void main(String[] args) {
@@ -34,7 +61,7 @@ public class Problem2 {
 		for (int i = 0; i < n; i++)
 			ci[i] = kb.nextInt();
 
-		for (int x : T.solution(n, bi, ci)) {
+		for (int x : T.solution(bi, ci)) {
 			System.out.print(x + " ");
 		}
 	}
