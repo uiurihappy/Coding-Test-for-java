@@ -2,6 +2,21 @@ package Brandi;
 
 import java.util.*;
 
+/** 4621 : 공 꺼내기
+ * url: http://jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=3980&sca=99&page=32
+ * input1
+ 6
+ 1 2 3 4 5 6
+ 6 5 2 1 4 3
+ * output1
+ 6 5 1 2 4 3
+ * input2
+ 5
+ 11 2 9 13 24
+ 9 2 13 24 11
+ * output2
+ 24 13 9 2 11
+ */
 public class Problem2 {
 	public int[] solution(int[] ball, int[] order) {
 		int[] answer = new int[ball.length];
