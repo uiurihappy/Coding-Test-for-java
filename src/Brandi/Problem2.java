@@ -3,51 +3,45 @@ package Brandi;
 import java.util.*;
 
 public class Problem2 {
-
 	public int[] solution(int[] ball, int[] order) {
 		int[] answer = new int[ball.length];
-		List<Integer> list = new ArrayList<>();
-		for (int b : ball) {
-			list.add(b);
-		}
-		int idx = 0;
-		int left = 0, right = list.size() - 1;
-		while (idx < order.length) {
-			int current = order[idx];
-			if (current == list.get(left)) {
-				answer[idx] = list.remove(left);
-				idx++;
-				continue;
-			} else if (current == list.get(right)) {
-				answer[idx] = list.remove(right);
-				idx++;
-				continue;
+		int answerIndex = 0;
+
+		// ball에 있는 공들을 순차적으로 확인하면서 빼낸 공을 answer에 넣어줍니다.
+		// 빼낸 공이 보류 상태였을 경우, 다시 확인해 빼낼 수 있는 공인지 확인합니다.
+		Deque<Integer> deque = new ArrayDeque<>();
+		for (int b : ball) deque.offerLast(b);
+		Set<Integer> pending = new HashSet<>();
+
+		for (int o : order) {
+			// order에 있는 공을 빼내기 위해 순차적으로 확인합니다.
+			// 빼내려는 공이 보류 상태이면, 그 공을 다시 큐의 맨 앞 또는 맨 뒤로 보내줍니다.
+			// 빼내려는 공이 바로 빼낼 수 있는 경우, 큐에서 빼내고 answer에 넣어줍니다.
+			if (deque.peekFirst() == o) {
+				deque.pollFirst();
+				answer[answerIndex++] = o;
+
+				// 이전에 보류 상태인 공이 빠져나갈 수 있는지 확인합니다.
+				while (pending.contains(deque.peekFirst())) {
+					int pendingBall = deque.pollFirst();
+					pending.remove(pendingBall);
+					answer[answerIndex++] = pendingBall;
+				}
+			} else if (deque.peekLast() == o) {
+				deque.pollLast();
+				answer[answerIndex++] = o;
+
+				// 이전에 보류 상태인 공이 빠져나갈 수 있는지 확인합니다.
+				while (pending.contains(deque.peekLast())) {
+					int pendingBall = deque.pollLast();
+					pending.remove(pendingBall);
+					answer[answerIndex++] = pendingBall;
+				}
 			} else {
-				for (int i = left + 1; i < right; i++) {
-					int num = list.get(i);
-					if (current == num) {
-						answer[idx] = list.remove(i);
-						idx++;
-						break;
-					}
-				}
-			}
-			// 공이 보류된 경우 (왼쪽과 오른쪽 어느쪽으로 빠져나갈 수 있어야 하는 경우)
-			if (idx < order.length) {
-				int next = order[idx];
-				int leftIdx = list.indexOf(next);
-				int rightIdx = list.lastIndexOf(next);
-				if (leftIdx == left + 1) {
-					answer[idx] = list.remove(leftIdx);
-					idx++;
-					left++;
-				} else if (rightIdx == right - 1) {
-					answer[idx] = list.remove(rightIdx);
-					idx++;
-					right--;
-				}
+				pending.add(o);
 			}
 		}
+
 		return answer;
 	}
 	public static void main(String[] args) {
