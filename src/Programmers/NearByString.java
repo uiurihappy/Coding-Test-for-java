@@ -3,6 +3,16 @@ package Programmers;
 import java.util.HashMap;
 import java.util.Scanner;
 
+/** 가장 가까운 문자 찾기
+ * input1
+ banana
+ * output1
+ -1 -1 -1 2 2 2
+ * input2
+ foobar
+ * output2
+ -1 -1 1 -1 -1 -1
+ */
 public class NearByString {
     public int[] solution(String s) {
         int[] answer = new int[s.length()];
