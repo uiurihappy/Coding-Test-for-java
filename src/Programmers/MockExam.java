@@ -37,17 +37,12 @@ public class MockExam {
         int max = Math.max(score[0], Math.max(score[1], score[2]));
 
         // 최대 점수를 가진 수포자 리스트 생성
-        ArrayList<Integer> answ = new ArrayList<Integer>();
+        ArrayList<Integer> answ = new ArrayList<>();
         for(int i = 0; i < score.length; i++)
             if(max == score[i])
                 answ.add(i+1);
 
-        int[] answer = new int[answ.size()];
-
-        for (int i = 0; i < answ.size(); i++)
-            answer[i] = answ.get(i);
-
-        return answer;
+        return answ.stream().mapToInt(num -> num).toArray();
     }
 
     public static void main(String[] args) {
