@@ -32,14 +32,13 @@ public class RandomSortString {
 //        return answer;
 
         // n의 인덱스대로 오름차순
-        String[] answer = new String[strings.length];
         Arrays.sort(strings, (s1, s2) -> {
             if(s1.charAt(n) > s2.charAt(n)) return 1;
             else if(s1.charAt(n) == s2.charAt(n)) return s1.compareTo(s2);
             else if(s1.charAt(n) < s2.charAt(n)) return -1;
             else return 0;
         });
-        return answer;
+        return strings;
     }
 
     public static void main(String[] args) {
