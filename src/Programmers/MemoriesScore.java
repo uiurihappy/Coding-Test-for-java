@@ -2,6 +2,9 @@ package Programmers;
 
 import java.util.*;
 
+/** 추억 점수
+ *
+ */
 public class MemoriesScore {
 
 	public int[] solution(String[] name, int[] yearning, String[][] photo) {
