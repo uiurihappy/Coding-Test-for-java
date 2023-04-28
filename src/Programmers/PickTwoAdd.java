@@ -2,6 +2,18 @@ package Programmers;
 
 import java.util.*;
 
+/** 두 개 뽑아서 더하기
+ * input1
+ 5
+ 2 1 3 4 1
+ * output1
+ 2 3 4 5 6 7
+ * input2
+ 4
+ 5 0 2 7
+ * output2
+ 2 5 7 9 12
+ */
 public class PickTwoAdd {
 
 	public int[] solution(int[] numbers) {
