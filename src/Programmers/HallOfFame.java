@@ -19,6 +19,20 @@ public class HallOfFame {
             Collections.sort(topList);
             answer[i] = topList.get(0);
         }
+        // sol 2
+//        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+//
+//        int temp = 0;
+//
+//        for(int i = 0; i < score.length; i++) {
+//
+//            priorityQueue.add(score[i]);
+//            if (priorityQueue.size() > k) {
+//                priorityQueue.poll();
+//            }
+//
+//            answer[i] = priorityQueue.peek();
+//        }
         return answer;
     }
 
