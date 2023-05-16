@@ -17,7 +17,6 @@ public class Test4 {
         for (int i = 0; i < fruitWeights.length - k; i++) {
             int[] temp = Arrays.copyOfRange(fruitWeights, i, i + k);
             answer.add(Arrays.stream(temp).max().getAsInt());
-            System.out.println(answer);
         }
 
         answer = answer.stream().distinct().collect(Collectors.toList());
