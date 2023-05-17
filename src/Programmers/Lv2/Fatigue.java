@@ -16,8 +16,8 @@ public class Fatigue {
 	static boolean[] visited;
 
 	public int solution(int k, int[][] dungeons) {
-		answer= 0;
-		visited= new boolean[dungeons.length];
+		answer = 0;
+		visited = new boolean[dungeons.length];
 
 		dfs(k, dungeons, 0, 0);
 
@@ -25,18 +25,18 @@ public class Fatigue {
 	}
 
 	public void dfs(int k, int[][] dungeons, int idx, int cnt){
-		if(idx==dungeons.length){
-			answer= answer>cnt ? answer:cnt;
+		if (idx == dungeons.length){
+			answer= Math.max(answer, cnt);
 			return;
 		}
 
-		for(int i=0; i<dungeons.length; i++){
-			if(dungeons[i][0]>k||visited[i]) continue;
-			visited[i]= true;
-			dfs(k-dungeons[i][1], dungeons, idx+1, cnt+1);
-			visited[i]= false;
+		for (int i = 0; i < dungeons.length; i++){
+			if (dungeons[i][0] > k || visited[i]) continue;
+			visited[i] = true;
+			dfs(k - dungeons[i][1], dungeons, idx + 1, cnt + 1);
+			visited[i] = false;
 		}
-		dfs(k, dungeons, idx+1, cnt);
+		dfs(k, dungeons, idx + 1, cnt);
 	}
 
 	public static void main(String[] args) {
