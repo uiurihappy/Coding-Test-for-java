@@ -2,6 +2,12 @@ package Programmers.Lv2;
 
 import java.util.Scanner;
 
+/** 숫자의 표현
+ * input1
+ * 15
+ * output1
+ * 4
+ */
 public class ExpressionOfNum {
     public int solution(int n) {
         int answer = 0;
