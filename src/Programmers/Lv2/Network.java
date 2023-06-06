@@ -23,11 +23,10 @@ public class Network {
     boolean[] dfs(int[][] computers, int i, boolean[] check) {
         check[i] = true;
 
-        for (int j = 0; j < computers.length; j++) {
-            if (i != j && computers[i][j] == 1 && check[j] == false) {
+        for (int j = 0; j < computers.length; j++)
+            if (i != j && computers[i][j] == 1 && !check[j])
                 check = dfs(computers, j, check);
-            }
-        }
+
         return check;
     }
 
