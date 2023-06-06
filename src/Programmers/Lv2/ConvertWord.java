@@ -30,19 +30,17 @@ public class ConvertWord {
         }
 
         for (int i = 0; i < words.length; i++) {
-            if (visited[i]) {
+            if (visited[i])
                 continue;
-            }
 
             int k = 0;    // 같은 스펠링 몇개인지 세기
-            for (int j = 0; j < begin.length(); j++) {
-                if (begin.charAt(j) == words[i].charAt(j)) {
+            for (int j = 0; j < begin.length(); j++)
+                if (begin.charAt(j) == words[i].charAt(j))
                     k++;
-                }
-            }
 
             if (k == begin.length() - 1) {  // 한글자 빼고 모두 같은 경우
                 visited[i] = true;
+                // cnt 누적하면서 dfs 탐색
                 dfs(words[i], target, words, cnt + 1);
                 visited[i] = false;
             }
