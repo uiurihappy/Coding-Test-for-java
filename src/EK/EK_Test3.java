@@ -1,4 +1,4 @@
-package PlayGround;
+package EK;
 import java.util.Scanner;
 /*
 5

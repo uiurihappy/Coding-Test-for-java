@@ -1,4 +1,4 @@
-package PlayGround;
+package EK;
 
 public class EK_Test2 {
 }
