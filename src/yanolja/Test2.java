@@ -2,6 +2,38 @@ package yanolja;
 
 import java.util.*;
 
+/** Test 2
+ * input1
+ 3
+ 3 1 2
+ 2 3 1
+ * output1
+ true
+ * input2
+ 3
+ 1 2 1
+ 2 3 3
+ * output2
+ false
+ * input3
+ 4
+ 1 2 3 4
+ 2 1 4 4
+ * output3
+ false
+ * input4
+ 4
+ 1 2 3 4
+ 2 1 4 3
+ * output4
+ false
+ * input5
+ 5
+ 1 2 2 3 3
+ 2 3 3 4 5
+ * output5
+ false
+ */
 public class Test2 {
 
 	public boolean solution(int[] A, int[] B) {
