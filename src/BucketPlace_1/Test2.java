@@ -11,38 +11,33 @@ public class Test2 {
 			switch (roll) {
 				case "Score":
 					// "Score"가 선택된 경우, 임의의 정수를 스택에 추가
-					int randomScore = getRandomScore();
-					stack.push(randomScore);
+					stack.push(getRandomScore());
 					break;
 				case "R":
 					// "R"이 선택된 경우, 이전 점수를 스택에서 제거
-					if (!stack.isEmpty()) {
+					if (!stack.isEmpty())
 						stack.pop();
-					}
 					break;
 				case "+":
 					// "+"가 선택된 경우, 이전 두 점수의 합을 스택에 추가
 					if (stack.size() >= 2) {
 						int top = stack.pop();
 						int secondTop = stack.pop();
-						int newScore = top + secondTop;
 						stack.push(secondTop);
 						stack.push(top);
-						stack.push(newScore);
+						stack.push(top + secondTop);
 					}
 					break;
 				case "D":
 					// "D"가 선택된 경우, 이전 점수를 2배로 계산하여 스택에 추가
 					if (!stack.isEmpty()) {
 						int previousScore = stack.peek();
-						int newScore = previousScore * 2;
-						stack.push(newScore);
+						stack.push(previousScore * 2);
 					}
 					break;
 				default:
 					// 숫자 문자열인 경우 Integer로 파싱하여 스택에 추가
-					int number = Integer.parseInt(roll);
-					stack.push(number);
+					stack.push(Integer.parseInt(roll));
 					break;
 			}
 		}
@@ -63,6 +58,13 @@ public class Test2 {
 	}
 
 	public static void main(String[] args) {
+		Test2 T = new Test2();
+		Scanner kb = new Scanner(System.in);
+		int n = kb.nextInt();
+		String[] rolls = new String[n];
+		for (int i = 0; i < n; i++)
+			rolls[i] = kb.next();
 
+		System.out.println(T.solution(rolls));
 	}
 }

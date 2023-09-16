@@ -8,15 +8,19 @@ public class Test1 {
 		int targetIndex = 0;
 		int typedIndex = 0;
 
+		// target = "ohouse", typed = "oohoussse"
+		// target.length = 6, typed.length = 9
+
+		// target = "bucketplace", typed = "buckeetpladce"
+		// target.length = 11, typed.length = 12
 		while (typedIndex < typed.length()) {
 			if (targetIndex < target.length() && target.charAt(targetIndex) == typed.charAt(typedIndex)) {
 				targetIndex++;
 				typedIndex++;
-			} else if (typedIndex == 0 || typed.charAt(typedIndex) != typed.charAt(typedIndex - 1)) {
+			} else if (typed.charAt(typedIndex) != typed.charAt(typedIndex - 1)) {
 				return false;
-			} else {
-				typedIndex++;
 			}
+			typedIndex++;
 		}
 
 		return targetIndex == target.length();
@@ -26,7 +30,8 @@ public class Test1 {
 	public static void main(String[] args) {
 		Test1 T = new Test1();
 		Scanner kb = new Scanner(System.in);
-		int n = kb.nextInt();
-
+		String target = kb.next();
+		String typed = kb.next();
+		System.out.println(T.solution(target, typed));
 	}
 }

@@ -1,5 +1,6 @@
 package BucketPlace_1;
 
+import java.util.Scanner;
 import java.util.Stack;
 
 public class Test3 {
@@ -32,6 +33,9 @@ public class Test3 {
 
 
 	public static void main(String[] args) {
-
+		Test3 T = new Test3();
+		Scanner kb = new Scanner(System.in);
+		String s = kb.next();
+		System.out.println(T.solution(s));
 	}
 }
