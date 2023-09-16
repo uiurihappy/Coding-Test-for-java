@@ -41,12 +41,8 @@ public class Test2 {
 					break;
 				default:
 					// 숫자 문자열인 경우 Integer로 파싱하여 스택에 추가
-					try {
-						int number = Integer.parseInt(roll);
-						stack.push(number);
-					} catch (NumberFormatException e) {
-						// 파싱 실패 시 무시
-					}
+					int number = Integer.parseInt(roll);
+					stack.push(number);
 					break;
 			}
 		}
