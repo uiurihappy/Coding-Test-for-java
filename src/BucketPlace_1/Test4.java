@@ -1,16 +1,8 @@
-package Programmers.Lv2;
+package BucketPlace_1;
+import java.util.Arrays;
+import java.util.Scanner;
 
-import java.util.*;
-
-/** H-index
- * input1
- 5
- 3 0 6 1 5
- * output1
- 3
- */
-public class HIndex {
-
+public class Test4 {
 	public int solution(int[] citations) {
 		int answer = 0;
 		Arrays.sort(citations);
@@ -22,7 +14,7 @@ public class HIndex {
 	}
 
 	public static void main(String[] args) {
-		HIndex T = new HIndex();
+		Test4 T = new Test4();
 		Scanner kb = new Scanner(System.in);
 		int n = kb.nextInt();
 		int[] citations = new int[n];
